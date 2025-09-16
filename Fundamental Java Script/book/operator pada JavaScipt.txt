@@ -1,0 +1,293 @@
+// catatan Vers
+
+📒 Catatan Operator JS (versi logika + analogi)
+
+🔹 Operator itu apa?
+Operator = simbol yang menyuruh JS melakukan sesuatu pada data.
+Bayangin kayak kamu nyuruh temen:
+   “Tolong tambahin ini” → (+)
+   “Bandingin ini sama itu” → (==)
+   “Simpan nilai ini ke variabel” → (=)
+
+Operand = benda/angka/variabel yang dipakai.
+Contoh:  5 + 3  → 5 dan 3 = operand, + = operator.
+
+--------------------------------------------------
+1. Binary Operator (butuh 2 nilai)
+--------------------------------------------------
+→ Kayak main UNO, selalu ada 2 kartu yang dibandingkan/dihitung.
+
+- **Aritmatika** → buat hitung angka
+  (+ tambah, - kurang, * kali, / bagi, % sisa bagi)
+  Contoh: 10 % 3 = 1 (karena 10 bagi 3 sisanya 1)
+
+- **Perbandingan** → buat nanya “benar/tidak?”
+  (> lebih besar, < lebih kecil, == sama, === sama & tipe sama)
+  Contoh: 5 == "5" → true, tapi 5 === "5" → false
+
+- **Logika** → buat mikir kondisi
+  (&& = DAN, || = ATAU, ! = TIDAK)
+  Contoh: umur >= 17 && punyaSIM → boleh nyetir
+
+- **String** → + untuk gabung teks
+  "Halo " + "Rha" → "Halo Rha"
+
+- **Penugasan** → kasih/ubah nilai variabel
+  ( =, +=, -=, *=, /=, %= )
+  👉 Analogi: bayangin kamu punya celengan uang
+
+     let x = 10   → awalnya celengan isi 10
+     x += 5       → masukin lagi 5 (jadi 15)
+     x -= 3       → ambil 3 (sisa 12)
+     x *= 2       → celengan dobel (24)
+     x /= 4       → bagi rata jadi 4 orang (6)
+     x %= 5       → sisa kalau dibagi 5 (1)
+
+--------------------------------------------------
+2. Unary Operator (butuh 1 nilai)
+--------------------------------------------------
+→ Kayak aksi sendirian, langsung nempel ke 1 angka/variabel.
+
+- ++ / -- → naik/turun 1
+  Contoh: umur = 20; umur++ → sekarang 21
+- typeof → nanya tipe data
+  typeof "Halo" → "string"
+- delete → hapus properti dari objek
+  delete obj.nama
+
+--------------------------------------------------
+3. Ternary Operator (butuh 3 nilai)
+--------------------------------------------------
+→ Kayak if...else versi singkat.
+
+Format:
+   kondisi ? nilaiJikaBenar : nilaiJikaSalah
+
+Contoh:
+   let umur = 18
+   let status = (umur >= 17) ? "Dewasa" : "Anak-anak"
+   // kalau >= 17 → "Dewasa", kalau tidak → "Anak-anak"
+
+--------------------------------------------------
+4. typeof & instanceof
+--------------------------------------------------
+- typeof → cek tipe data (angka, string, boolean, dll.)
+  typeof 123 → "number"
+- instanceof → cek apakah sesuatu dibuat dari class tertentu
+  [] instanceof Array → true
+
+--------------------------------------------------
+5. Operator Precedence (urutan prioritas)
+--------------------------------------------------
+→ JS punya aturan "siapa duluan".
+Ingat: **KuKaBaTaKu** (Kurung, Kali/Bagi, Tambah, Kurang)
+
+Contoh:
+   1 + 2 * 3 - 4
+   = 1 + (6) - 4
+   = 3
+
+Kalau mau paksa urutan sendiri → pakai kurung ()
+
+--------------------------------------------------
+6. Operator Penugasan (dibahas lebih dalam)
+--------------------------------------------------
+Tujuan: kasih nilai ke variabel atau ubah isinya.
+
+🔹 Analogi: variabel itu kayak **kotak penyimpanan**.
+- Kalau kamu tulis `x = 10`, artinya kamu taruh angka 10 ke dalam kotak bernama `x`.
+- Kalau sebelumnya `x = 5` terus kamu tulis `x = 10`, isi kotak lama (5) langsung diganti sama yang baru (10).
+- Kalau kamu pakai `x += 5`, itu artinya "ambil isi kotak, tambahin 5, lalu taruh lagi di kotak itu".
+  Jadi bukan ganti total, tapi update.
+
+Contoh step by step:
+   let x = 10   // kotak x berisi 10
+   x += 5       // isi baru = isi lama + 5 → jadi 15
+   x -= 2       // isi baru = 15 - 2 → jadi 13
+   x *= 2       // isi baru = 26
+   x /= 5       // isi baru = 5.2
+   x %= 2       // sisa bagi 5.2 dengan 2 → 1.2 (dibulatkan di JS bisa berbeda)
+
+
+📒 Catatan: Operator Perbandingan di JavaScript
+
+🔹 Apa itu Operator Perbandingan?
+Operator perbandingan dipakai untuk membandingkan 2 nilai.
+Hasilnya selalu **boolean** → `true` atau `false`.
+
+Analogi: 
+Kayak kamu nanya hal sederhana:
+- "Apakah 5 lebih besar dari 3?" → iya (true)
+- "Apakah 2 sama dengan 7?" → tidak (false)
+
+--------------------------------------------------
+📝 Tabel Operator Perbandingan
+--------------------------------------------------
+| Operator | Nama                          | Keterangan                                       |
+|----------|-------------------------------|-------------------------------------------------|
+| ==       | Sama dengan                   | Bandingkan nilai saja (tipe data diabaikan)     |
+| ===      | Sama dengan & tipe sama       | Bandingkan nilai + tipe data                     |
+| !=       | Tidak sama dengan             | Bandingkan nilai saja (tipe data diabaikan)     |
+| !==      | Tidak sama dengan & tipe sama | Bandingkan nilai + tipe data                     |
+| >        | Lebih besar dari              | True kalau kiri lebih besar                     |
+| <        | Lebih kecil dari              | True kalau kiri lebih kecil                     |
+| >=       | Lebih besar atau sama dengan  | True kalau kiri lebih besar atau sama           |
+| <=       | Lebih kecil atau sama dengan  | True kalau kiri lebih kecil atau sama           |
+
+--------------------------------------------------
+🔹 Contoh Penggunaan
+--------------------------------------------------
+let a = 5;
+let b = "5";
+let c = 8;
+
+// == (sama dengan, cek nilai saja)
+console.log(a == b);   // true → karena 5 sama dengan "5" (JS ubah tipe otomatis)
+
+// === (sama dengan + tipe)
+console.log(a === b);  // false → karena a number, b string
+
+// != (tidak sama dengan, cek nilai saja)
+console.log(a != b);   // false → karena nilainya sama
+
+// !== (tidak sama + tipe)
+console.log(a !== b);  // true → karena tipe beda
+
+// > (lebih besar dari)
+console.log(c > a);    // true → 8 lebih besar dari 5
+
+// < (lebih kecil dari)
+console.log(a < c);    // true → 5 lebih kecil dari 8
+
+// >= (lebih besar atau sama dengan)
+console.log(a >= 5);   // true → karena sama
+
+// <= (lebih kecil atau sama dengan)
+console.log(a <= 4);   // false → 5 tidak lebih kecil atau sama dengan 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// belajar Vers
+
+
+
+Operator dalam javascipt adalah sebuah simbol yang di gunakan untuk melakukan
+operasi
+
+ada banyak jenis  Operator
+
+> Operator Binnary {
+
+    aritmatika 
+    penugasan
+    perbanidang
+    logika
+    sting
+
+}
+
+> kondiona  --- ternnary
+> typeof --- unarry
+
+Operator Binnary adalah sebuah Operator yang membutuh kan 2 operan contoh nya
+
+<code>
+
+operand1 Operator operand2
+
+</code>
+
+sedangkan Operator unarry hanya membutuh kan 1 operand
+
+<code>
+//bisa seperti ini 
+
+Operator operand
+
+// atau
+
+operand Operator
+</code>
+
+dan terakhir operator ternnary adalah operator yang membutuh kan 3 operand
+
+operator jaca scipt yaitu
+
++ tambah
+- kurang
+* kali
+/ bagai
+% modulus / sisa bagai
+
+
+operator precedance
+yaitu urutan penggerjaan operator
+
+yaitu 
+KuKaBaTaKu
+() * / = -
+
+jika 1 + 2 * 3 - 4 di kerjakan oleh Js maka hasil nya 3 bukan 5
+karena Js punya tatacara pengerjaan nya dulu secara prioritas
+yaitu kukabataku atau Kurung Kali Bagi Tambah Kurang
+
+Operator penugasan yaitu " = "
+dan ada beberapa lain dari Operator penugasan ini di antara nya 
+=
++=
+-=
+*=
+/=
+%=
+
+
+
+contoh operator penugasan paling awal ada dalma variable
+pertama difinisikan variable misal
+
+var x    _>enter
+
+x = 10 _>
+
+output = 10
+jadi variable x sudah berisi angka 5
+
+jika di lihat dari rumus nya ini 
+dia melakukan operand
+operand1 yang di sebelah kanan melakukan operand ke sebelah kiri dari =
+
+nah jika melakukan penamaan yang serupa semisal
+
+x = 5
+maka posisi x ini yang asal nya punya nilai 10 maka akan tergantikan (tertumpuk) menjadi nilai
+5 sebagai nilai baru pada x
+
+kemudain
+contoh semisal operator +=
+semisal dari x yang di atas yang sudah berjumalah 5 kemudain di tulis 
+
+x += 5 
+
+maka dia tidak akan menggantikan nilai dari 5 tadi tapi akan di tambah kan
+yang hasil nya menjadi 10
+
+
